@@ -4,7 +4,8 @@ const UserInput = () => {
     return (
         <div>
            <p>hi</p>
-           <input type = "text">
+           <input type = "text"/>
+           <button>Submit </button>
         </div>
     )
 }

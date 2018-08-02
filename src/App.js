@@ -3,7 +3,41 @@ import './App.css';
 import UserInput from './UserInput.js';
 import UserOutput from './UserOutput.js';
 
+
 class App extends Component {
+  state = {
+    persons: [
+      {name: "black", password: "black123"},
+      {name: "green", password: "green123"},
+      {name: "blue", password: "blue123"},
+    ]
+  }
+
+  switchNameHandler = function(newName) {
+    this.setState({
+      persons: [
+        {name: newName, password: "black123"},
+        {name: "green", password: "green123"},
+        {name: "blue", password: "blue123"},
+    ]
+
+    })
+
+  }
+
+  nameChangedHandler = (e) => {
+    this.setState({
+      persons: [
+        {name: "black", password: "black123"},
+        {name: e.target.value, password: "green123"},
+        {name: "blue", password: "blue123"},
+    ]
+
+    })
+
+  }
+
+
   render() {
     return (
       <div className="App">
@@ -20,7 +54,18 @@ class App extends Component {
           <li>Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets</li>
         </ol>
         <UserInput/>
-        <UserOutput/>
+        
+        <UserOutput 
+        name = {this.state.persons[0].name} 
+        password = {this.state.persons[0].password} />
+        <UserOutput 
+        name = {this.state.persons[1].name} 
+        password = {this.state.persons[1].password}    
+        changed = {this.nameChangedHandler}/>
+        <UserOutput 
+        name = {this.state.persons[2].name} 
+        password = {this.state.persons[2].password} />
+        <button onClick = {() => this.switchNameHandler("red01010")  }>Click me hoes </button>
       </div>
     );
   }
