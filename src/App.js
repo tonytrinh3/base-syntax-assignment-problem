@@ -39,6 +39,12 @@ class App extends Component {
 
 
   render() {
+    const style = {
+      fontSize: '20px',
+      color: "blue"
+
+    }
+
     return (
       <div className="App">
         <ol>
@@ -56,6 +62,7 @@ class App extends Component {
         <UserInput/>
         
         <UserOutput 
+        
         name = {this.state.persons[0].name} 
         password = {this.state.persons[0].password} />
         <UserOutput 
@@ -65,7 +72,7 @@ class App extends Component {
         <UserOutput 
         name = {this.state.persons[2].name} 
         password = {this.state.persons[2].password} />
-        <button onClick = {() => this.switchNameHandler("red01010")  }>Click me hoes </button>
+        <button style = {style} onClick = {() => this.switchNameHandler("red01010")  }>Click me hoes </button>
       </div>
     );
   }

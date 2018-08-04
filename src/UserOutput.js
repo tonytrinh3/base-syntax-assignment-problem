@@ -5,7 +5,7 @@ const UserOutput = (props) => {
         <div>
             <p>UserName: {props.name}</p>
             <p>Password: {props.password}</p>
-            <input type = "text" onChange = {props.changed}/>
+            <input type = "text" onChange = {props.changed} value = {props.name}/>
         </div>
     )
 }
